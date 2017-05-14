@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+</head>
+<body ng-controller="mainCtrl as vm">
+	<aside class="aside">
+		<h1>Main</h1>
+		<p>Overview</p>
+	</aside>
+	<div class="main">
+		<div class="items">
+			<h2>Items</h2>
+			<form>
+				<input type="text" ng-model="vm.itemValue" placeholder="Type name here...">
+				<button ng-click="vm.addItem(vm.itemValue);" id="sentbtn">Add new</button>
+			</form>
+			<ul>
+				<li ng-repeat="item in vm.data track by $index" ng-click="vm.showComments($index);" ng-class="{'active': vm.index == $index}">
+					<span class="active-line"></span>
+					<span class="item-name" title="{{item.value}}">{{item.value}}
+					<span class="count">{{item.comments.length}}</span></span>
+					<button ng-click="vm.rmItem($index)" id="delbtn">Delete</button>
+				</li>
+			</ul>
+		</div>
+		<div class="comments">
+			<h2>Comments #{{vm.index+1}}</h2>
+			<ul>
+				<li ng-repeat="comment in vm.comments">
+					<span class="comment-icon"></span>
+					<span class="comment">
+						{{comment}}
+					</span>
+				</li>
+			</ul>
+			<form ng-submit="vm.addComment(vm.comment)">
+				<textarea cols="30" rows="10" ng-model="vm.comment" ng-enter="vm.addComment(vm.comment)"></textarea>
+			</form>
+		</div>
+	</div>
+	<script src="scripts/app.js"></script>
+</body>
+</html>

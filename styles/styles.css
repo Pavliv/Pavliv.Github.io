@@ -1,0 +1,136 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+.aside {
+	position: relative;
+	width: 20%;
+	height: 100%;
+	float: left;
+	background-color: #2b2f3e;
+}
+.aside h1 {
+	margin: 30px 0 0 40px;
+	font-size: 35px;
+	color: #424655;
+}
+.aside p {
+	margin-top: 70px;
+	padding: 20px 0 20px 40px;
+	font-size: 17px;
+	color: #fff;
+	background-color: #ff3951;
+}
+.items, .comments {
+	width: 38%;
+	float: left;
+	margin: 20px 0 0 20px;
+	padding: 20px;
+	border: 2px solid #d3d3d3;
+	border-radius: 3px;
+	box-shadow: 1px 1px 2px grey;
+}
+h2 {
+	margin-top: 0;
+	font-size: 35px;
+	color: #575b6a;
+}
+.items input {
+	width: 70%;
+	padding: 7px;
+	border: 2px solid #d3d3d3;
+	border-radius: 3px;
+}
+#sentbtn {
+	width: 26%;
+	padding: 9px;
+	margin-left: 10px;
+	background-color: #27ccc0;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+}
+#delbtn {
+	position: relative;
+	width: 20%;
+	float: right;
+	margin-right: 9px;
+	padding: 9px;
+	background-color: #fff;
+	border: 2px solid #ff6382;
+	border-radius: 3px;
+	color: #ff6382;
+}
+.items ul {
+	padding: 0;
+}
+.items li {
+	margin-bottom: 5px;
+	list-style-type: none;
+	border-bottom: 1px solid #d3d3d3;
+	font-weight: bold;
+	clear: both;
+}
+.items li:after {
+	clear: both;
+}
+.item-name {
+	display: inline-block;
+	padding: 12px 1px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: calc(100% - 120px);
+	overflow: hidden;
+}
+.comment-icon, .comment {
+	display: inline-block;
+}
+.comment-icon {
+	width: 100%;
+	height: 100%;
+}
+.comments li {
+	list-style-type: none;
+	border-bottom: 1px solid #d3d3d3;
+}
+li {
+	position: relative;
+}
+li.active .active-line{
+	display: block;
+}
+.active-line {
+	top: 0;
+	bottom: 0;
+	left: -22px;
+	position: absolute;
+	display: none;
+	border-left: 4px solid #ff3951;
+}
+textarea {
+	width: 100%;
+	height: 100px;
+	resize: none;
+	border: 2px solid #d3d3d3;
+	border-radius: 3px;
+}
+.count {
+	width: 20px;
+	padding: 4px 8px;
+	margin-left: 15px;
+	background-color: #27ccc0;
+	border: none;
+	border-radius: 10px;
+	color: #fff;
+}
+.comments li:nth-child(odd) .comment-icon {
+	background-color: red;
+}
+.comments li:nth-child(even) .comment-icon {
+	background-color: blue;
+}
